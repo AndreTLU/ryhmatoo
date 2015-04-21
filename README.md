@@ -2,7 +2,10 @@
 Rühmatöö javascriptis
 
 21.04.2015
+
 Lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp.
+
+
 
 
 ained.php - Kuvab JSON-i kujul andmed ainete kohta. Andmed tulevad algselt ainekood_pohiandmed.json failist
