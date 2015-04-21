@@ -5,11 +5,9 @@ Rühmatöö javascriptis
 
 21.04.2015
 
-Kausta 21.04.2015 on lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp.
+Kausta "21.04.2015" on lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp.
 
-.
-.
-.
+...
 
 ained.php - Kuvab JSON-i kujul andmed ainete kohta. Andmed tulevad algselt ainekood_pohiandmed.json failist
 
