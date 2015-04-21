@@ -5,7 +5,7 @@ Rühmatöö javascriptis
 
 21.04.2015 uuendus
 
-Kausta "21.04.2015" on lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp.
+Kausta "21-04-2015" on lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp.
 
 ...
 
