@@ -3,9 +3,15 @@ Rühmatöö javascriptis
 
 ...
 
-21.04.2015 uuendus
+22.04.2015 uuendus
 
-Lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp + veidi bootstrapi disaini.
+Võimalik on on näha teatud aine aine infot lisades urli lõppu #ainekood.
+Tabelis viimasesse lahtrisse tuleb nupp mis copyb valitud aine
+lingi(nagu GIThubis on).
+NB! Lisaandmed tuleb kohe alguses ära peita, et leht oleks kiirem.
+Lisaandmed peaksid olema näha siis kui vajutada aine lahtri peale. Võiks
+ka testida kumb on kiirem kas JSONist saada andmed või failist.
+Teine otsingu lahter eemeldada.
 
 ...
 
