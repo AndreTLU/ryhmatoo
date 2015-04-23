@@ -11,7 +11,7 @@ lingi(nagu GIThubis on).
 NB! Lisaandmed tuleb kohe alguses ära peita, et leht oleks kiirem.
 Lisaandmed peaksid olema näha siis kui vajutada aine lahtri peale. Võiks
 ka testida kumb on kiirem kas JSONist saada andmed või failist.
-Teine otsingu lahter eemeldada.
+Teine otsingu lahter eemaldada.
 
 ...
 
