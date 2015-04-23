@@ -5,7 +5,7 @@ Rühmatöö javascriptis
 
 22.04.2015 uuendus
 
-Võimalik on on näha teatud aine aine infot lisades urli lõppu #ainekood.
+Võimalik on näha teatud aine infot lisades urli lõppu #ainekood.
 Tabelis viimasesse lahtrisse tuleb nupp mis copyb valitud aine
 lingi(nagu GIThubis on).
 NB! Lisaandmed tuleb kohe alguses ära peita, et leht oleks kiirem.
