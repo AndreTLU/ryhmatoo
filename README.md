@@ -1,20 +1,8 @@
-# Rühmatoo
-Rühmatöö JavaScriptis
+# ryhmatoo
+Rühmatöö javascriptis
 
 ...
 
-<<<<<<< HEAD
-30.04.2015 uuendus
-
-* Pisike BootStrapi disaini muudatus
-* Iga aine on tehtud lingiks (ainekood, ainenimi jne... viib selle aine lehele)
-* Aine linki saab kopeerida otse clipboardi ühe nupuvajutusega "Kopeeri link". Ligipääs aine lehelt
-* "Lisaandmed" ja "Kopeeri link" nupp nähtaval vaid aine lehel, pealehel mitte
-
-...
-
-=======
->>>>>>> origin/master
 22.04.2015 uuendus
 
 Võimalik on näha teatud aine infot lisades urli lõppu #ainekood.
