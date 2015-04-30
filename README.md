@@ -3,6 +3,7 @@ Rühmatöö JavaScriptis
 
 ...
 
+<<<<<<< HEAD
 30.04.2015 uuendus
 
 * Pisike BootStrapi disaini muudatus
@@ -12,6 +13,8 @@ Rühmatöö JavaScriptis
 
 ...
 
+=======
+>>>>>>> origin/master
 22.04.2015 uuendus
 
 Võimalik on näha teatud aine infot lisades urli lõppu #ainekood.

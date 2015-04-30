@@ -44,13 +44,21 @@
 		}
     </style>
 
+<<<<<<< HEAD
 <script>	
+=======
+<script>
+		// Kui leht on leatud	
+>>>>>>> origin/master
 		window.onload = function() {			
 			andmed();		
 		}
 		
 		var xmlhttp = new XMLHttpRequest();
+<<<<<<< HEAD
 		
+=======
+>>>>>>> origin/master
 		function andmed() {		
 			
 			xmlhttp.onreadystatechange = function() {
@@ -62,6 +70,7 @@
 					var json_response = JSON.parse(response);
 					
 					var out = "<table>";
+<<<<<<< HEAD
 					
 					if(window.location.hash) {
 						var type = window.location.hash.substr(1);
@@ -120,16 +129,80 @@
 									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
 									json_response[i].vljund +
 									"</a></td></tr>";
+=======
+					if(window.location.hash){
+						var type = window.location.hash.substr(1);
+						for(var i = 0; i < json_response.length; i++) {
+								if(type == json_response[i].ainekood){
+									out += "<tr id='"+json_response[i].ainekood+"'><td>" +
+									json_response[i].ainekood +
+									"</td><td>" +
+									json_response[i].aineNimi +
+									"</td><td>" +
+									json_response[i].courseName +
+									"</td><td>" + 
+									json_response[i].eap +
+									"</td><td>" + 
+									json_response[i].hindamisviis +
+									"</td><td>" + 
+									json_response[i].semester +
+									"</td><td>" +
+									json_response[i].ppejud + 
+									"</td><td class = 'lisaAndmed'>" +  
+									json_response[i].hindamine +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].eesmrk +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].sisu +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].vljund +
+									"</td><td class = 'link'></td></tr>";
+								}
+						}
+					}else{
+						for(var i = 0; i < json_response.length; i++) {
+									out += "<tr id='"+json_response[i].ainekood+"'><td>" +
+									json_response[i].ainekood +
+									"</td><td>" +
+									json_response[i].aineNimi +
+									"</td><td>" +
+									json_response[i].courseName +
+									"</td><td>" + 
+									json_response[i].eap +
+									"</td><td>" + 
+									json_response[i].hindamisviis +
+									"</td><td>" + 
+									json_response[i].semester +
+									"</td><td>" +
+									json_response[i].ppejud + 
+									"</td><td class = 'lisaAndmed'>" +  
+									json_response[i].hindamine +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].eesmrk +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].sisu +
+									"</td><td class = 'lisaAndmed'>" + 
+									json_response[i].vljund +
+									"</td><td class = 'link'>/td></tr>";
+>>>>>>> origin/master
 						}
 					}
 					out += "</table>";
     				document.getElementById("tabeliAndmed").innerHTML = out;
 				}
 			};
+<<<<<<< HEAD
 			xmlhttp.open('GET','./ained_full.json', true);
 			//xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send();
 		}			
+=======
+			xmlhttp.open('GET','./ained_full.json',true);
+			//xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+			xmlhttp.send();
+		}
+			
+>>>>>>> origin/master
 </script>
 
 </head>
@@ -174,6 +247,7 @@
                         <th class="lisaAndmed">Eesmärk</th>
                         <th class="lisaAndmed">Sisu</th>
                         <th class="lisaAndmed">Väljund</th>
+						<th>Link</th>
                     </tr>
                     </thead>
                     <tbody id="tabeliAndmed">
@@ -204,6 +278,10 @@
 
 <!-- Peidab / näitab lisaandmeid (hindamine, eesmärk, sisu, väljund) -->
 <script>
+<<<<<<< HEAD
+=======
+	// Peidab / nĆ¤itab lisaandmeid (hindamine, eesmĆ¤rk, sisu, vĆ¤ljund)
+>>>>>>> origin/master
 	$( "#naitaPeida" ).click(function() {
   			$( ".lisaAndmed" ).toggle();
 			
