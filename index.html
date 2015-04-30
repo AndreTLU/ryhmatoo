@@ -5,82 +5,158 @@
 <meta charset="UTF-8">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- BootStrap Data Table -->
     <link href="bootstrapDataTable/css/vendor/bootstrap.min.css" type="text/css" rel="stylesheet">
     <link href="bootstrapDataTable/css/jquery.bdt.css" type="text/css" rel="stylesheet">
-    
-	<script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="bootstrapDataTable/js/vendor/bootstrap.min.js" type="text/javascript"></script>
     <script src="bootstrapDataTable/js/vendor/jquery.sortelements.js" type="text/javascript"></script>
     <script src="bootstrapDataTable/js/jquery.bdt.js" type="text/javascript"></script>
+    
+    <!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+    
+    <!-- ZeroClipboard -->
+    <script src="zeroclipboard-2.2.0/dist/ZeroClipboard.Core.min.js"></script>
+    <script src="zeroclipboard-2.2.0/dist/ZeroClipboard.min.js"></script>
+    
+    <!-- BootStrap Material Design -->
+    <script src="bootstrap-material-design/scripts/material.js"></script>
+    <script src="bootstrap-material-design/scripts/ripples.js"></script>
+    <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/material-fullpalette.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/material.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/ripples.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-material-design/dist/css/roboto.min.css">
+    
+    
+    
+    <style>
+    	.lisaAndmed {
+			display: none;
+		}
+		
+		#naitaPeida {
+			display: none;
+		}
+		
+		#kopeeriLink {
+			display: none;
+		}
+    </style>
 
-<script>
-		// Kui leht on leatud
+<script>	
 		window.onload = function() {			
 			andmed();		
 		}
 		
 		var xmlhttp = new XMLHttpRequest();
 		
-	function andmed() {		
+		function andmed() {		
 			
 			xmlhttp.onreadystatechange = function() {
 
 				if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 
-					// faili sisu
 					var response = xmlhttp.responseText;
-					//console.log(response);
 					
 					var json_response = JSON.parse(response);
 					
 					var out = "<table>";
 					
-					for(var i = 0; i < json_response.length; i++) {
-						        out += "<tr><td>" +
-								json_response[i].ainekood +
-								"</td><td>" +
-								json_response[i].aineNimi +
-								"</td><td>" +
-								json_response[i].courseName +
-								"</td><td>" + 
-								json_response[i].eap +
-								"</td><td>" + 
-								json_response[i].hindamisviis +
-								"</td><td>" + 
-								json_response[i].semester +
-								"</td><td>" +
-								json_response[i].ppejud + 
-								"</td><td class = 'lisaAndmed'>" +  
-								json_response[i].hindamine +
-								"</td><td class = 'lisaAndmed'>" + 
-								json_response[i].eesmrk +
-								"</td><td class = 'lisaAndmed'>" + 
-								json_response[i].sisu +
-								"</td><td class = 'lisaAndmed'>" + 
-								json_response[i].vljund +
-								"</td></tr>";
+					if(window.location.hash) {
+						var type = window.location.hash.substr(1);
+						
+						for(var i = 0; i < json_response.length; i++) {
+								if(type == json_response[i].ainekood) {
+									out += "<tr id='"+json_response[i].ainekood+"'><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].ainekood +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].aineNimi +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].courseName +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].eap +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].hindamisviis +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].semester +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].ppejud + 
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +  
+									json_response[i].hindamine +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].eesmrk +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].sisu +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].vljund +
+									"</a></td></tr>";
+								}
+						}
 					}
-					out += "</table>"
+					
+					else {
+						for(var i = 0; i < json_response.length; i++) {
+									out += "<tr id='"+json_response[i].ainekood+"'><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].ainekood +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].aineNimi +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].courseName +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].eap +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].hindamisviis +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].semester +
+									"</a></td><td><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +
+									json_response[i].ppejud + 
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" +  
+									json_response[i].hindamine +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].eesmrk +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].sisu +
+									"</a></td><td class = 'lisaAndmed'><a href='"+location.href+'?#'+json_response[i].ainekood+"'>" + 
+									json_response[i].vljund +
+									"</a></td></tr>";
+						}
+					}
+					out += "</table>";
     				document.getElementById("tabeliAndmed").innerHTML = out;
-				
 				}
 			};
-	}
-			xmlhttp.open('GET','./ained_full.json',true);
+			xmlhttp.open('GET','./ained_full.json', true);
 			//xmlhttp.setRequestHeader("Content-type","application/x-www-form-urlencoded");
 			xmlhttp.send();
-		
+		}			
 </script>
 
 </head>
 <body> 
-
+<div class="navbar navbar-inverse">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="javascript:void(0)">Ained</a>
+    </div>
+    <div class="navbar-collapse collapse navbar-responsive-collapse">
+        <form class="navbar-form navbar-left">
+            <input type="text" class="form-control col-lg-8" placeholder="Otsi..." id="search">
+        </form>
+    </div>
+</div>
 <div class="container">
     <div class="row">
         <div class="col-md-*">
             <h1>Ained</h1>
             
-            <button id="naitaPeida">Peida lisaandmed</button>
+            <button class="btn btn-default btn-raised" id="naitaPeida">Näita lisaandmeid</button>
+            
+            <button class="btn btn-default btn-raised" id="kopeeriLink" data-clipboard-text="javascript:window.location" title="Kopeeri link">Kopeeri link</button>
             
             <div class="table-responsive">
 
@@ -103,12 +179,12 @@
                     <tbody id="tabeliAndmed">
                 	</tbody>
            	 	</table>
-                
         	</div>
         </div>
     </div>
 </div>
 
+<!-- Laeb tabelisse andmed -->
 <script>
 	// bdt - Bootstrap Data Table
 	$(document).ready( function () {
@@ -116,18 +192,39 @@
 	});
 </script>
 
+<!-- Näitab "Lisaandmed" ja "Kopeeri link" nuppu vaid siis, kui on valitud mingi aine -->
 <script>
-	// Peidab / näitab lisaandmeid (hindamine, eesmärk, sisu, väljund)
+	$(document).ready(function () {
+		if(window.location.href.indexOf("#") > -1) {
+			$("#naitaPeida").css("display", "inline");
+			$("#kopeeriLink").css("display", "inline");
+		}
+	});
+</script>
+
+<!-- Peidab / näitab lisaandmeid (hindamine, eesmärk, sisu, väljund) -->
+<script>
 	$( "#naitaPeida" ).click(function() {
   			$( ".lisaAndmed" ).toggle();
 			
-			if ($(".lisaAndmed").is(".lisaAndmed:visible")) {
-				$("#naitaPeida").html("Peida lisaandmed");
-			}
-			else {
+			if ($(".lisaAndmed").is(".lisaAndmed:hidden")) {
 				$("#naitaPeida").html("Näita lisaandmeid");
 			}
+			else {
+				$("#naitaPeida").html("Peida lisaandmed");
+			}
 	});
+</script>
+
+<!-- Kopeerib valitud aine lingi -->
+<script>
+var client = new ZeroClipboard( document.getElementById("kopeeriLink") );
+
+client.on( "ready", function( readyEvent ) {  
+	client.on( 'copy', function(event) {
+          client.setText(""+window.location);
+	});
+});
 </script>
 
 </body>

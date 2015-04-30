@@ -70,6 +70,7 @@
             /**
              * search input field
              */
+			 /*
             obj.before(
                 $('<form/>')
                     .addClass('pull-right')
@@ -85,6 +86,7 @@
                             )
                     )
             );
+			*/
 
             /**
              * select field for changing row per page

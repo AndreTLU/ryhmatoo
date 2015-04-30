@@ -1,11 +1,26 @@
-# ryhmatoo
-Rühmatöö javascriptis
+# Rühmatoo
+Rühmatöö JavaScriptis
 
 ...
 
-21.04.2015 uuendus
+30.04.2015 uuendus
 
-Lisatud tabel koos andmetega, otsing, näita / peida lisaandmete nupp + veidi bootstrapi disaini.
+* Pisike BootStrapi disaini muudatus
+* Iga aine on tehtud lingiks (ainekood, ainenimi jne... viib selle aine lehele)
+* Aine linki saab kopeerida otse clipboardi ühe nupuvajutusega "Kopeeri link". Ligipääs aine lehelt
+* "Lisaandmed" ja "Kopeeri link" nupp nähtaval vaid aine lehel, pealehel mitte
+
+...
+
+22.04.2015 uuendus
+
+Võimalik on näha teatud aine infot lisades urli lõppu #ainekood.
+Tabelis viimasesse lahtrisse tuleb nupp mis copyb valitud aine
+lingi(nagu GIThubis on).
+NB! Lisaandmed tuleb kohe alguses ära peita, et leht oleks kiirem.
+Lisaandmed peaksid olema näha siis kui vajutada aine lahtri peale. Võiks
+ka testida kumb on kiirem kas JSONist saada andmed või failist.
+Teine otsingu lahter eemaldada.
 
 ...
 
