@@ -3,6 +3,15 @@ Rühmatöö javascriptis
 
 ...
 
+30.04.2015 uuendus
+
+* Pisike BootStrapi disaini muudatus
+* Iga aine on tehtud lingiks (ainekood, ainenimi jne... viib selle aine lehele)
+* Aine linki saab kopeerida otse clipboardi ühe nupuvajutusega "Kopeeri link" (ligipääs aine lehelt)
+* "Lisaandmed" ja "Kopeeri link" nupud nähtaval vaid aine lehel, pealehel mitte
+
+...
+
 22.04.2015 uuendus
 
 Võimalik on näha teatud aine infot lisades urli lõppu #ainekood.
