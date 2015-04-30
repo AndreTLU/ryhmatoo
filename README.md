@@ -1,5 +1,5 @@
-# ryhmatoo
-Rühmatöö javascriptis
+# Rühmatoo
+Rühmatöö JavaScriptis
 
 ...
 
